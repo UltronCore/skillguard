@@ -1,3 +1,26 @@
 .DS_Store
 *.swp
 *.swo
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.cache/
+
+# Environment
+.env
+.env.*
+.env.local
+
+# GitNexus index
+.gitnexus/
+
+# Claude Code generated
+.claude/skills/
+AGENTS.md
+
+# Logs
+*.log
