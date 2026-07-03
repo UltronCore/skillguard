@@ -47,3 +47,24 @@ This project is indexed by GitNexus as **skillguard** (191 symbols, 187 relation
 This project is indexed by GitNexus. The knowledge graph lives at /Users/localuser/projects/skillguard/.gitnexus.
 Run `gitnexus analyze .` to refresh the index after major changes.
 Run `gitnexus analyze --skills .` to regenerate skill mappings.
+
+---
+
+# Project Context (AI agents — Claude, Fable, Codex)
+
+**Purpose:** Mandatory pre-install security gate for Claude Code skills/plugins/configs — multi-reviewer static threat analysis mapped to OWASP LLM Top 10. This is a Claude Code SKILL (markdown + references), not runnable code.
+**Status:** active, public. Read `README.md` and `RESEARCH_AND_IMPROVEMENTS.md`.
+
+## How to work on it / "test"
+- No build/test — it's `skills/skillguard/SKILL.md` + `references/`. Install by copying into the skills dir or enabling as a local plugin.
+- "Validating a change" = re-read SKILL.md end-to-end; confirm the threat catalog + report format stay coherent and example patterns are placeholders, not real secrets.
+
+## Safe vs dangerous
+- Safe: editing SKILL.md, references, docs.
+- **Dangerous:** never weaken a detection into a bypass; never add a real credential as an example; defensive tool only.
+
+## Conventions
+Markdown-only. Small commits. Internal planning maintained separately (not in this public repo).
+
+## Next tasks
+Implement the TruffleHog-style provider-anchored credential patterns from RESEARCH_AND_IMPROVEMENTS.md.
